@@ -17,7 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string("question");
-            $table->string("support");
+            $table->string("categorie");
             $table->string("reponse1");
             $table->string("reponse2");
             $table->string("reponse3");
