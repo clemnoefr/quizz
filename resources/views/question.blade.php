@@ -4,8 +4,9 @@
     <title>Création question</title>
 @endsection
 
-
-
+@section('CSS')
+    <link rel="stylesheet" href="{{ asset('css/question.css') }}">
+@endsection
 
 @section('content')
     <div class="card">
@@ -15,7 +16,6 @@
                 <p>Votre question a bien été enregistrée</p>
             </div>
             @endif
-
             <h5 class="card-title">Création d'une question</h5>
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -28,7 +28,7 @@
                     <label for="" class="form-label">Choisissez la catégorie</label>
                     <select class="form-select" aria-label="Default select example" name="categorie">
                         <option value="film">Films</option>
-                        <option value="jeux video">Jeux Videos</option>
+                        <option value="jeux videos">Jeux Videos</option>
                       </select>
                 </div>
 

@@ -1,0 +1,23 @@
+nav, .color{
+    background: rgb(131,33,142);
+    background: linear-gradient(96deg, rgba(131,33,142,1) 0%, rgba(75,34,141,1) 50%, rgba(48,36,145,1) 100%);
+
+}
+li>a{
+    color: white!important;
+    background-color: transparent!important;
+}
+
+.logo{
+    max-width: auto;
+    height: 40px;
+}
+ul > li{
+    margin-left:50px;
+    margin-right:50px;
+}
+
+form > button{
+    margin-bottom: 25px;
+}
+

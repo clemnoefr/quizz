@@ -9,14 +9,21 @@ class QuestionController extends Controller
 {
     public function ShowQuizz()
     {
-
-        // recup 10 questions aléatoirement
-        $quizz = Question::all()->random(10);
+        $type = $_GET["type"];
+        // recup 10 questions aléatoirement de la categorie $type
+        $quizz = Question::all()->where("categorie", $type)->random(10);
         return view("quizz")->with("quizz", $quizz);
     }
 
     public function VerifQuizz(Request $request)
     {
+        for ($i = 1; $i < 11; $i++) {
+
+            $validatedData = $request->validate([
+                'id_question_'.$i => 'required|string',
+                'reponse_'.$i => 'required|string',
+            ]);
+        }
         $total = 0;
         $values = $request->all();
         for ($i = 1; $i < 11; $i++) {
@@ -26,6 +33,7 @@ class QuestionController extends Controller
                 $total++;
             }
         }
+        return view("resultat")->with("score", $total);
     }
 
     public function CreateQuestion(Request $request)

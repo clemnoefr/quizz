@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('body');
 });
+Route::get('/quizz/?JV', 'QuestionController@ShowQuizz')->name('Quizz');
 Route::get('/quizz', 'QuestionController@ShowQuizz')->name('Quizz');
 
 Route::get('/question', function () {
